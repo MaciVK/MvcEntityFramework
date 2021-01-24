@@ -1,0 +1,27 @@
+﻿@model List<Enfermo>
+@{
+    List<Genero> Generos = ViewBag.Generos as List<Genero>;
+
+}
+<h1>Buscador de enfermos por Genero</h1>
+
+<div class="mt-2">
+    <ul class="list-group">
+        @foreach (Genero gen in Generos)
+        {
+            <li class="list-group-item">
+                @Html.ActionLink(gen.Text, "EnfermosGenero", "Enfermos", new { genero = gen.Value }, new { @class = "btn btn-info" })
+            </li>
+        }
+    </ul>
+</div>
+<hr />
+@if (Model != null)
+{
+    <ul class="list-group list-group-horizontal">
+        @foreach (Enfermo enf in Model)
+        {
+            <li class="list-group-item list-group-item-action">@enf.Apellido</li>
+        }
+    </ul>
+}

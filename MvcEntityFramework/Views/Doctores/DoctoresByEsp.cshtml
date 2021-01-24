@@ -1,0 +1,43 @@
+﻿@model List<Doctor>
+@{
+    List<string> Especialidades = ViewBag.Esp as List<string>;
+}
+<h1>DoctoresByEspecialidad</h1>
+<form method="post">
+    <select class="form-control" name="esp">
+        @foreach (string esp in Especialidades)
+        {
+            <option value="@esp">@esp</option>
+        }
+    </select>
+    <input type="number" class="form-control my-1" placeholder="Incremento" name="incr"/>
+    <button class="btn btn-success my-1" type="submit">Cargar doctores de esta especialidad</button>
+</form>
+<hr />
+@if (Model != null)
+{
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Apellido</th>
+                <th>Especialidad</th>
+                <th>Salario</th>
+                <th>Hospital</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Doctor doc in Model)
+            {
+                <tr>
+
+                    <th scope="row">@doc.IdDoctor </th>
+                    <td>@doc.Apellido</td>
+                    <td>@doc.Especialidad</td>
+                    <td>@doc.Salario</td>
+                    <td>@doc.Hospital</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,28 @@
+﻿@model List<Doctor>
+<h1>Doctores</h1>
+@Html.ActionLink("UpdateEspecialidadDoctor", "UpdateEspecialidadDoctor", "Doctores");
+@Html.ActionLink("DoctoresByEsp", "DoctoresByEsp", "Doctores");
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Apellidi</th>
+            <th>Especialidad</th>
+            <th>Salario</th>
+            <th>Hospital</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Doctor doc in Model)
+        {
+            <tr>
+
+                <th>@doc.IdDoctor </th>
+                <th>@doc.Apellido</th>
+                <th>@doc.Especialidad</th>
+                <th>@doc.Salario</th>
+                <th>@doc.Hospital</th>
+            </tr>
+        }
+    </tbody>
+</table>

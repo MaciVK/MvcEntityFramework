@@ -1,0 +1,49 @@
+﻿@model List<Enfermo>
+@Html.ActionLink("Nuevo Enfermo", "NuevoEnfermo", "Enfermos", null, new {@class="btn btn-primary"})
+
+<div class="container mt-5 pt-2">
+    <h1>ENFERMOS</h1>
+ 
+    <table class="table table-hover ">
+        <thead class="thead-dark">
+            <tr>
+                <th>APELLIDO</th>
+                <th>DIRECCION</th>
+                <th>FECHA NACIMIENTO</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Enfermo enf in Model)
+            {
+            <tr>
+                <th scope="row">@enf.Apellido</th>
+                <td>@enf.Direccion</td>
+                <td>@enf.FechaNacimiento</td>
+                <td>
+                    @Html.ActionLink("Detalles", "Details", "Enfermos", new { idinscripcion = enf.Inscripcion }, new { @class = "btn btn-info" })
+                </td>
+                <td>
+                    <a class="btn btn-warning"
+                       asp-action="Details"
+                       asp-controller="Enfermos"
+                       asp-route-idinscripcion="@enf.Inscripcion">Detalles</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger"
+                       asp-action="EliminarEnfermo"
+                       asp-controller="Enfermos"
+                       asp-route-inscripcion="@enf.Inscripcion">ELIMINAR</a>
+                </td>
+                <td>
+                    <a class="btn btn-primary"
+                       asp-action="ModificarEnfermo"
+                       asp-controller="Enfermos"
+                       asp-route-inscripcion="@enf.Inscripcion">EDITAR</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

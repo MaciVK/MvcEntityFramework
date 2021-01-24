@@ -1,0 +1,18 @@
+﻿@model ICoche
+
+<h1>INYECCION DE DEPENDENCIAS</h1>
+<div class="container align-content-center">
+    <div class="card" style="width:18rem">
+        <img src="~/images/@Model.Imagen" class="card-img-top" />
+        <div class="card-body">
+            <h2 class="card-title">@Model.Marca</h2>
+            <h4 class="card-subtitle">@Model.Modelo</h4>
+            <p class="card-text">Velocidad Actual: @Model.VelActual Km/h</p>
+            <p class="card-subtitle text-muted">Velocidad Maxima->@Model.VelMaxima Km/h</p>
+            <form method="post">
+                <button type="submit" class="btn btn-success" name="accion" value="acelerar">Acelerar</button>
+                <button type="submit" class="btn btn-danger" name="accion" value="frenar">Frenar</button>
+            </form>
+        </div> 
+    </div>
+</div>

@@ -1,0 +1,24 @@
+﻿@model List<Hospital>
+
+<div class="container mt-5 pt-2">
+    <h1>Hospital</h1>
+    <table class="table table-hover ">
+        <thead class="thead-dark">
+            <tr>
+                <th>NOMBRE</th>
+                <th>DIRECCION</th>
+                <th>TELEFONO</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Hospital hosp in Model)
+            {
+                <tr>
+                    <th scope="row">@hosp.Nombre</th>
+                    <td>@hosp.Direccion</td>
+                    <td>@hosp.Telefono</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

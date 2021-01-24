@@ -1,0 +1,27 @@
+﻿@model List<EmpleadoHospital>
+@Html.ActionLink("Empleados por Codigo de Hospital", "ProcedimientoEmpleadosHospital", "EmpleadosHospital",
+    null, new { @class = "btn btn-warning my-1" })
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Apellid</th>
+            <th>Funcion</th>
+            <th>Salario</th>
+            <th>Hospital</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (EmpleadoHospital emp in Model)
+        {
+            <tr>
+
+                <th>@emp.IdEmpleado </th>
+                <th>@emp.Apellido</th>
+                <th>@emp.Funcion</th>
+                <th>@emp.Salario</th>
+                <th>@emp.HospitalCod</th>
+            </tr>
+        }
+    </tbody>
+</table>

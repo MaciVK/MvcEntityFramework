@@ -1,0 +1,33 @@
+﻿@model Enfermo
+@{ 
+    List<Genero> generos = ViewBag.Generos as List<Genero>;
+}
+<form method="post" class="form-group">
+
+    <input type="hidden" class="form-control" name="inscripcion" value="@Model.Inscripcion">
+    <label>Apellido</label>
+    <input type="text" class="form-control" name="apellido" required value="@Model.Apellido">
+    <label>Direccion</label>
+    <input type="text" class="form-control" name="direccion" required value="@Model.Direccion">
+    <label>Fecha Nacimiento</label>
+    <input type="datetime" class="form-control" name="FechaNacimiento" required value="@Model.FechaNacimiento">
+    <label>Genero</label>
+    <select class="form-control" name="sexo">
+        @foreach (Genero genero in generos)
+        {
+            if (genero.Value == Model.Sexo)
+            {
+                <option value="@genero.Value" selected>@genero.Text</option>
+
+            }
+            else
+            {
+                <option value="@genero.Value">@genero.Text</option>
+
+            }
+        }
+    </select>
+    <label>NSS</label>
+    <input type="text" class="form-control" name="nss" required value="@Model.NSS">
+    <button type="submit" class="btn btn-success">MODIFICAR</button>
+</form>

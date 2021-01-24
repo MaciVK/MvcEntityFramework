@@ -1,0 +1,18 @@
+﻿@model Enfermo
+<h1>Todo ok</h1>
+
+<div class="container mt-5 pt-2">
+    <ul class="list-group">
+        <li class="list-group-item active">@Model.Inscripcion</li>
+        <li class="list-group-item">@Model.Apellido</li>
+        <li class="list-group-item">@Model.Direccion</li>
+        <li class="list-group-item">@Model.FechaNacimiento.ToShortDateString()</li>
+        <li class="list-group-item">@Model.Sexo</li>
+        <li class="list-group-item">@Model.NSS</li>
+
+    </ul>
+
+    @Html.ActionLink("Volver", "Index", "Enfermos", null, new { @class = "btn btn-outline-info mt-1" })
+
+
+</div>

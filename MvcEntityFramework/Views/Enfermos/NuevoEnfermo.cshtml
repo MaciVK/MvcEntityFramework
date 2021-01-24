@@ -1,0 +1,24 @@
+﻿@model List<Genero>
+<form method="post" class="form-group">
+
+    <label>Numero Inscripcion</label>
+    <input type="number" class="form-control" name="inscripcion" required>
+    <label>Apellido</label>
+    <input type="text" class="form-control" name="apellido" required>
+    <label>Direccion</label>
+    <input type="text" class="form-control" name="direccion" required>
+    <label>Fecha Nacimiento</label>
+    <input type="datetime" class="form-control" name="fechanac" required>
+    <label>Genero</label>
+    <select class="form-control" name="genero">
+        @foreach(Genero genero in Model)
+        {
+
+            <option value="@genero.Value">@genero.Text</option>
+        }
+    </select>
+    <label >NSS</label>
+    <input type="text" class="form-control" name="nss" required>
+    <button type="submit" class="btn btn-success">CREAR</button>
+</form>
+

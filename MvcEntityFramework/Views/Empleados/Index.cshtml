@@ -1,0 +1,24 @@
+﻿@model List<Empleado>
+<h1>Index Empleados</h1>
+@Html.ActionLink("Subir salario por departamento", "EmpleadosOficio", "Empleados",null,new {@class="btn btn-primary my-2" })
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>IDEMPLEADO</th>
+            <th>APELLIDO</th>
+            <th>OFICIO</th>
+            <th>SALARIO</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Empleado emp in Model)
+        {
+            <tr>
+                <td scope="row">@emp.NumEmp</td>
+                <td>@emp.Apellido</td>
+                <td>@emp.Oficio</td>
+                <td>@emp.Salario</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,18 @@
+﻿@model List<Departamento>
+<h1>INYECCION DE DEPENDENCIAS, uso Interfaces, Departamentos</h1>
+<div class="card-deck    row-cols-3">
+
+    @foreach (Departamento dep in Model)
+    {
+        <div class="col mb-4 pl-4">
+            <div class="card" style="width:19rem">
+                <div class="card-body">
+                    <h2 class="card-title">@dep.Nombre</h2>
+                    <h4 class="card-subtitle">ID @dep.Numero</h4>
+                    <p class="card-text text-info">Localidad: @dep.Localidad</p>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
